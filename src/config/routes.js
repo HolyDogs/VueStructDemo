@@ -11,7 +11,7 @@ export default[
     	component:index
     },
     {
-    	path: '/content',
+    	path: '/content/:id',
     	component:content
     },
     {

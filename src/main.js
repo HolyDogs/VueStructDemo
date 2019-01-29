@@ -5,8 +5,12 @@ import App from './App'
 import VueRouter from 'vue-router'
 import routes from './config/routes'
 import api from './config/api'
+import aapi from './config/index'
+import utils from './utils/fortime'
 
 Vue.prototype.$api=api
+Vue.prototype.$axapi=aapi
+Vue.prototype.$fortime=utils
 
 Vue.use(VueRouter)
 

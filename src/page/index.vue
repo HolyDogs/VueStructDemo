@@ -1,17 +1,27 @@
 <template>
   <div>
-    <h1 class="logo">cnodejs Api Test</h1>
+    <Header></Header>
     <ul class="list">
-      <li v-for="item in lists" v-text="item.title"></li>
+      <li v-for="item in lists">
+      	<time v-text="$fortime.goodTime(item.create_at)"></time>
+      	<router-link :to="'/content/' + item.id">{{item.title}}</router-link>
+      </li>
     </ul>
+    <Footer></Footer>
   </div>
 </template>
 
 <script type="text/javascript">
+	import Header from '../components/header'
+	import Footer from '../components/footer'
+
+
+
 	export default{
+		components:{Header,Footer},
 		data(){
 			return{
-				lists:[{id:1,title:"test1"},{id:2,title:"test2"}]
+				lists:[]
 			}
 		},
 		created(){
